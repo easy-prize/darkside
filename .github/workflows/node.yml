@@ -31,5 +31,5 @@ jobs:
       - name: Test
         run: yarn test
         env:
-          MONGODB_URI: mongodb://localhost:27107/test
+          MONGODB_URI: mongodb://localhost:27017/test
           PORT: 3000
