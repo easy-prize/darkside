@@ -1,5 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { config, ConfigService } from './config.service';
+import { ConfigService } from './config.service';
 
 describe('ConfigService', () => {
   let service: ConfigService;
@@ -8,7 +8,7 @@ describe('ConfigService', () => {
     const module: TestingModule = await Test.createTestingModule({
       providers: [{
         provide: ConfigService,
-        useValue: config,
+        useValue: new ConfigService(),
       }],
     }).compile();
 
