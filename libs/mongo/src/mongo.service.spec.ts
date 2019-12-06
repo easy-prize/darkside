@@ -5,7 +5,7 @@ import { MongoService } from './mongo.service';
 describe('MongoService', () => {
   let service: MongoService;
 
-  beforeEach(async () => {
+  beforeAll(async () => {
     const module: TestingModule = await Test.createTestingModule({
       imports: [ConfigModule],
       providers: [{
@@ -18,9 +18,9 @@ describe('MongoService', () => {
     }).compile();
 
     service = module.get<MongoService>(MongoService);
-  });
+  }, 100000);
 
-  afterEach(async () => {
+  afterAll(async () => {
     await service.close();
   });
 
