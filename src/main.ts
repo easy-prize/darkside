@@ -4,6 +4,7 @@ import { AppModule } from './app.module';
 
 const bootstrap = async () => {
   const app = await NestFactory.create(AppModule);
+  app.enableShutdownHooks();
   await app.listen(config.port, config.host);
 };
 
