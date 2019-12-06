@@ -45,7 +45,8 @@
     "no-any": true,
     "no-return-await": true,
     "await-promise": true,
-    "no-angle-bracket-type-assertion": true
+    "no-angle-bracket-type-assertion": true,
+    "trailing-comma": true
   },
   "rulesDirectory": []
 }

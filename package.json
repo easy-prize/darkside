@@ -4,6 +4,9 @@
   "description": "Dark side of Easy Prize",
   "author": "Joosung Park <admin@slowmotion.dev>",
   "license": "MIT",
+  "engines": {
+    "node": "12.x"
+  },
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "nest build",
