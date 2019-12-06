@@ -32,3 +32,4 @@ jobs:
         run: yarn test
         env:
           MONGODB_URI: mongodb://localhost:27107/test
+          PORT: 3000
