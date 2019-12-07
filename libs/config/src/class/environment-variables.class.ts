@@ -28,6 +28,9 @@ export class EnvironmentVariablesClass {
   @IsString()
   public NCP_SMS_SERVICE_ID: string;
 
+  @IsNumberString()
+  public NCP_SMS_SENDER: string;
+
   constructor(env: Record<string, string>) {
     Object.assign(this, env);
     const errors = validateSync(this);

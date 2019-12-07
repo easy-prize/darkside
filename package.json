@@ -27,8 +27,10 @@
     "@nestjs/core": "^6.7.2",
     "@nestjs/platform-express": "^6.7.2",
     "@nestjs/swagger": "^4.0.9",
+    "@types/crypto-js": "^3.1.43",
     "class-transformer": "^0.2.3",
     "class-validator": "^0.11.0",
+    "crypto-js": "^3.1.9-1",
     "dotenv": "^8.2.0",
     "fastify-swagger": "^2.5.0",
     "mongodb": "^3.3.5",
@@ -76,7 +78,8 @@
     ],
     "moduleNameMapper": {
       "@app/config": "<rootDir>/libs/config/src",
-      "@app/mongo": "<rootDir>/libs/mongo/src"
+      "@app/mongo": "<rootDir>/libs/mongo/src",
+      "@app/push": "<rootDir>/libs/push/src"
     }
   }
 }
