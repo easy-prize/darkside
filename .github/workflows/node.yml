@@ -33,3 +33,6 @@ jobs:
         env:
           MONGODB_URI: mongodb://localhost:27017/test
           PORT: 3000
+          NCP_ACCESS_KEY: ${{ secrets.NCP_ACCESS_KEY }}
+          NCP_SECRET_KEY: ${{ secrets.NCP_SECRET_KEY }}
+          NCP_SMS_SERVICE_ID: ${{ secrets.NCP_SMS_SERVICE_ID }}
