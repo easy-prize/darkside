@@ -21,7 +21,7 @@ describe('MongoService', () => {
   }, 100000);
 
   afterAll(async () => {
-    await service.close();
+    await service.onApplicationShutdown();
   });
 
   it('should be defined', () => {
