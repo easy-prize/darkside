@@ -38,6 +38,7 @@ export class ConfigService implements Config {
       secretKey: env.NCP_SECRET_KEY,
     };
     this.ncpSms = {
+      sender: env.NCP_SMS_SENDER,
       serviceId: env.NCP_SMS_SERVICE_ID,
     };
   }
