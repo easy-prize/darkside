@@ -18,4 +18,8 @@ describe('PushService', () => {
   it('should be defined', () => {
     expect(service).toBeDefined();
   });
+
+  it('should send message', async () => {
+    await service.sendMessage(['01030256290'], 'This Is Test Message');
+  });
 });

@@ -4,9 +4,7 @@ import { PushService } from './push.service';
 
 @Module({
   exports: [PushService],
-  imports: [HttpModule.register({
-    baseURL: 'https://sens.apigw.ntruss.com/',
-  }), ConfigModule],
+  imports: [HttpModule, ConfigModule],
   providers: [PushService],
 })
 export class PushModule {

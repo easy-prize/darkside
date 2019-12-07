@@ -1,5 +1,6 @@
 import { ConfigService } from '@app/config';
 import { HttpService, Inject, Injectable } from '@nestjs/common';
+import { classToPlain } from 'class-transformer';
 import { validateOrReject } from 'class-validator';
 import * as CryptoJS from 'crypto-js';
 import { MessageRequest } from '../class/message-request.class';
@@ -23,18 +24,20 @@ export class PushService {
     this.secretKey = config.ncp.secretKey;
   }
 
-  public async sendMessage(to: number | string, text: string) {
+  public async sendMessage(to: Array<number | string>, text: string) {
     const endpoint = `/sms/v2/services/${escape(this.smsServiceId)}/messages`;
     const sender: string = this.smsSender;
-    return this.httpService.post<MessageResult>(endpoint, await validateOrReject(new MessageRequest({
+    const body = new MessageRequest({
       content: text,
       contentType: ContentType.common,
       from: sender,
-      messages: [{
-        to: to.toString(),
-      }],
+      messages: to.map((i) => ({
+        to: i.toString(),
+      })),
       type: MessageType.sms,
-    })), {
+    });
+    await validateOrReject(body);
+    return this.httpService.post<MessageResult>(endpoint, classToPlain(body), {
       baseURL: 'https://sens.apigw.ntruss.com',
       headers: {
         'Content-Type': 'application/json',
