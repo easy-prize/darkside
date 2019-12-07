@@ -18,4 +18,18 @@ describe('ConfigService', () => {
   it('should be defined', () => {
     expect(service).toBeDefined();
   });
+
+  it('should throw error when config is wrong', () => {
+    expect(() => {
+      return new ConfigService({
+        MONGODB_URI: '',
+      });
+    }).toThrow();
+  });
+
+  it('should use default value', () => {
+    expect(new ConfigService({
+      JWT_SECRET: undefined,
+    })).toBeInstanceOf(ConfigService);
+  });
 });
