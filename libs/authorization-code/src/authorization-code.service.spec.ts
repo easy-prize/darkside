@@ -1,3 +1,4 @@
+import { PushService } from '@app/push';
 import { Test, TestingModule } from '@nestjs/testing';
 import { AuthorizationCodeService } from './authorization-code.service';
 
@@ -6,7 +7,8 @@ describe('AuthorizationCodeService', () => {
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
-      providers: [AuthorizationCodeService]
+      imports: [PushService],
+      providers: [AuthorizationCodeService],
     }).compile();
 
     service = module.get<AuthorizationCodeService>(AuthorizationCodeService);
