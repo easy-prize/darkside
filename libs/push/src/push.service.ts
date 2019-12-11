@@ -3,11 +3,11 @@ import { HttpService, Inject, Injectable } from '@nestjs/common';
 import { classToPlain } from 'class-transformer';
 import { validateOrReject } from 'class-validator';
 import * as CryptoJS from 'crypto-js';
-import { File } from '../class/file.class';
-import { MessageRequest } from '../class/message-request.class';
-import { ContentType } from '../enum/content-type.enum';
-import { MessageType } from '../enum/message-type.enum';
-import { MessageResult } from '../interface/message-result.interface';
+import { File } from './class/file.class';
+import { MessageRequest } from './class/message-request.class';
+import { ContentType } from './enum/content-type.enum';
+import { MessageType } from './enum/message-type.enum';
+import { MessageResult } from './interface/message-result.interface';
 
 @Injectable()
 export class PushService {
