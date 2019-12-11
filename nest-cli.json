@@ -28,6 +28,15 @@
       "compilerOptions": {
         "tsConfigPath": "libs/push/tsconfig.lib.json"
       }
+    },
+    "authorization-code": {
+      "type": "library",
+      "root": "libs/authorization-code",
+      "entryFile": "index",
+      "sourceRoot": "libs/authorization-code/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/authorization-code/tsconfig.lib.json"
+      }
     }
   },
   "compilerOptions": {

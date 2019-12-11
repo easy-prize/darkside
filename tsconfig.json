@@ -19,6 +19,9 @@
       ],
       "@app/push": [
         "libs/push/src"
+      ],
+      "@app/authorization-code": [
+        "libs/authorization-code/src"
       ]
     }
   },

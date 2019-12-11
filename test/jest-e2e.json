@@ -16,6 +16,8 @@
     "@app/mongo/(.*)": "<rootDir>/../libs/mongo/src/$1",
     "@app/mongo": "<rootDir>/../libs/mongo/src",
     "@app/push/(.*)": "<rootDir>/../libs/push/src/$1",
-    "@app/push": "<rootDir>/../libs/push/src"
+    "@app/push": "<rootDir>/../libs/push/src",
+    "@app/authorization-code/(.*)": "<rootDir>/../libs/authorization-code/src/$1",
+    "@app/authorization-code": "<rootDir>/../libs/authorization-code/src"
   }
 }
