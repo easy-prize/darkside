@@ -1,4 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
+import { writeFileSync } from 'fs';
+import { resolve } from 'path';
+import { fileExistsSync } from 'tsconfig-paths/lib/filesystem';
 import { ConfigService } from './config.service';
 
 describe('ConfigService', () => {
@@ -27,9 +30,19 @@ describe('ConfigService', () => {
     }).toThrow();
   });
 
+  it('should use .env file when it is exists', () => {
+    const envFile = resolve(process.cwd(), '.env');
+    if (!fileExistsSync(envFile)) {
+      writeFileSync(envFile, '');
+    }
+  });
+
   it('should use default value', () => {
     expect(new ConfigService({
       JWT_SECRET: undefined,
+    })).toBeInstanceOf(ConfigService);
+    expect(new ConfigService({
+      JWT_SECRET: 'SLoWMoTIoN',
     })).toBeInstanceOf(ConfigService);
   });
 });
