@@ -13,12 +13,14 @@ export class AuthorizationCodeService {
   public async send(phone: string): Promise<string> {
     const code = this.random().toFixed(6);
     await this.pushService.sendMessage([phone], `${code} is your authorization code`);
+    this.codes.set(phone, code);
     return code;
   }
 
   public verify(phone: string, code: string | number): void {
     if (this.codes.get(phone) !== (typeof code === 'string' ? code : code.toFixed(6))) {
-      throw new AuthorizationCodeError();
+      throw new AuthorizationCodeError('Code Verify Failed');
     }
+    this.codes.delete(phone);
   }
 }
