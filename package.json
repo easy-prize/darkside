@@ -82,7 +82,8 @@
       "@app/config": "<rootDir>/libs/config/src",
       "@app/mongo": "<rootDir>/libs/mongo/src",
       "@app/push": "<rootDir>/libs/push/src",
-      "@app/authorization-code": "<rootDir>/libs/authorization-code/src"
+      "@app/authorization-code": "<rootDir>/libs/authorization-code/src",
+      "@app/user": "<rootDir>/libs/user/src"
     }
   }
 }

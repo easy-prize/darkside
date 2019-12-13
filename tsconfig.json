@@ -22,6 +22,9 @@
       ],
       "@app/authorization-code": [
         "libs/authorization-code/src"
+      ],
+      "@app/user": [
+        "libs/user/src"
       ]
     }
   },
